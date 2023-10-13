@@ -1,0 +1,11 @@
+configVersion: 1
+name: grocery-price-api
+id: ari:cloud:compass:ef28d24b-75a2-440a-8367-1a353f60ef09:component/e5ece592-2da5-4309-af5a-3c65c83668b6/d77c02a9-c8c3-4a5d-887b-67e125ed71ac
+description: Basic API that will test Atlassian Compass
+typeId: SERVICE
+fields: {}
+labels: []
+links: []
+customerFields: []
+relationships: []
+
