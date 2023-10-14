@@ -38,3 +38,5 @@ class TaxItem {
     +Float totalCost
 }
 ```
+
+Domain is about the resource (this line to be deleted)
