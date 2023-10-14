@@ -17,26 +17,53 @@ class LineItem {
     +getQty() Integer
 }
 
+class CalculationType {
+    <<enumeration>>
+    TOTALS
+    TAXES
+    ALL
+}
+
 class CalculationRequest {
+    <<request>>
     String customerId
+    CalculationType calculationType
     LineItem[] lineItems
 
-    +getCustomerId() String 
+    +getCustomerId() String
+    +getCalculationType() String 
     +getLineItems() LineItem[]
 }
 
 CalculationRequest o-- LineItem
 
 class CalculationResponse {
+    <<response>>
     +String calculationId
     +LineItem[] calculations
+    +TaxItem[] taxes
+
+    +getCalculationId() String
+    +getCalculations() LineItem[]
+    +getTaxes() TaxItem[]
 }
 
 class TaxItem {
     +String taxType
     +Double taxPercentage
     +Float totalCost
+
+    +getTaxtType() String
+    +getTaxPercentage() Double
+    +getTotalCost() Float
 }
+
+CalculationResponse o-- LineItem
+CalculationResponse o-- TaxItem
 ```
 
-Domain is about the resource (this line to be deleted)
+When making a request, the value of the `CalculationType` must be one of:
+
+* Totals
+* Taxes
+* All (Totals and Taxes)

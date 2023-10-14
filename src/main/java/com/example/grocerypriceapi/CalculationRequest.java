@@ -5,6 +5,8 @@ import java.util.List;
 public class CalculationRequest {
     
     private String customerId;
+
+    private CalculationType calculationType;
     private List<LineItem> lineItems;
 
     public String getCustomerId() {
@@ -13,6 +15,14 @@ public class CalculationRequest {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
+    }
+
+    public CalculationType getCalculationType() {
+        return calculationType;
+    }
+
+    public void setCalculationType(CalculationType calculationType) {
+        this.calculationType = calculationType;
     }
 
     public List<LineItem> getLineItems() {
