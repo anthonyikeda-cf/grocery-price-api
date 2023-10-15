@@ -2,6 +2,7 @@ package com.example.grocerypriceapi;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,9 @@ public class PriceCalculatorController {
     private final Logger log = LoggerFactory.getLogger(getClass().getCanonicalName());
     private final Map<String, CalculationResponse> responseMap = new HashMap<>();
 
+    @Autowired
+    protected CalculatorService service;
+
     @PostMapping()
     public ResponseEntity<Mono<Void>> createCalculation(@RequestBody CalculationRequest request) {
         log.debug("Calculating item costs for customer {}", request.getCustomerId());
@@ -28,16 +32,16 @@ public class PriceCalculatorController {
 
         switch(request.getCalculationType()) {
             case TOTALS:
-                List<LineItem> calculatedItems = calculateTotals(request.getLineItems());
+                List<LineItem> calculatedItems = service.calculateTotals(request.getLineItems());
                 responseMap.put(calculationId, new CalculationResponse(calculationId, calculatedItems, null));
                 break;
             case TAXES:
-                List<TaxItem> taxedItems = calculationTaxes(request.getLineItems());
+                List<TaxItem> taxedItems = service.calculationTaxes(request.getLineItems());
                 responseMap.put(calculationId, new CalculationResponse(calculationId, null, taxedItems));
                 break;
             case ALL:
-                List<LineItem> calcItems = calculateTotals(request.getLineItems());
-                List<TaxItem> taxItems = calculationTaxes(request.getLineItems());
+                List<LineItem> calcItems = service.calculateTotals(request.getLineItems());
+                List<TaxItem> taxItems = service.calculationTaxes(request.getLineItems());
                 responseMap.put(calculationId, new CalculationResponse(calculationId, calcItems, taxItems));
                 break;
             default:
@@ -53,21 +57,4 @@ public class PriceCalculatorController {
         return ResponseEntity.ok(Mono.just(calculation));
     }
 
-    private List<LineItem> calculateTotals(List<LineItem> lineItems) {
-        return lineItems.stream().map(items -> {
-            String productId = items.productId();
-            Integer qty = items.qty();
-            Float totalCost = Double.valueOf(3.20 * qty).floatValue();
-            return new LineItem(productId, qty, totalCost);
-        }).toList();
-    }
-
-    private List<TaxItem> calculationTaxes(List<LineItem> lineItems) {
-        return lineItems.stream().map(items -> {
-            Float taxPercentage = 0.09f;
-            Integer qty = items.qty();
-            Float totalCost = Double.valueOf(3.20 * qty).floatValue();
-            return new TaxItem("GST", taxPercentage, totalCost * (1+taxPercentage));
-        }).toList();
-    }
 }

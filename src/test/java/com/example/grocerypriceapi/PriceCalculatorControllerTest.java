@@ -42,7 +42,7 @@ public class PriceCalculatorControllerTest {
                 .expectBody()
                 .consumeWith(System.out::println)
                 .isEmpty().getResponseHeaders();
-        
+
         URI location = results.getLocation();
 
         log.info("Created URI = {}", location.toString());
