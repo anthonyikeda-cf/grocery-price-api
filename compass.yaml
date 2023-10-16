@@ -14,6 +14,9 @@ links:
   - name: 'API documentation'
     type: DOCUMENT
     url: 'https://github.com/future-assessments/grocery-price-api/blob/main/README.md'
+  - name: 'OpenAPI'
+    type: OTHER_LINKS
+    url: 'https://github.com/future-assessments/grocery-price-api/blob/main/calculator-swagger.yml'
 relationships: {}
 labels: []
 customFields: []
