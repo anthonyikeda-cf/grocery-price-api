@@ -18,7 +18,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/calculation/v1")
 public class PriceCalculatorController {
-    
+
     private final Logger log = LoggerFactory.getLogger(getClass().getCanonicalName());
     private final Map<String, CalculationResponse> responseMap = new HashMap<>();
 
@@ -30,7 +30,7 @@ public class PriceCalculatorController {
         log.debug("Calculating item costs for customer {}", request.getCustomerId());
         String calculationId = UUID.randomUUID().toString();
 
-        switch(request.getCalculationType()) {
+        switch (request.getCalculationType()) {
             case TOTALS:
                 List<LineItem> calculatedItems = service.calculateTotals(request.getLineItems());
                 responseMap.put(calculationId, new CalculationResponse(calculationId, calculatedItems, null));
@@ -47,13 +47,18 @@ public class PriceCalculatorController {
             default:
                 return ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.status(HttpStatus.CREATED).location(URI.create(String.format("/calculation/v1/%s", calculationId))).build();
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .location(URI.create(String.format("/calculation/v1/%s", calculationId))).build();
     }
 
     @GetMapping("/{calculationId}")
-    public ResponseEntity<Mono<CalculationResponse>> getCalculation(@PathVariable("calculationId") String calculationId) {
+    public ResponseEntity<Mono<CalculationResponse>> getCalculation(
+            @PathVariable("calculationId") String calculationId) {
         log.debug("Returning calculated value for {}", calculationId);
         var calculation = this.responseMap.get(calculationId);
+        if (calculation == null) {
+            return ResponseEntity.notFound().build();
+        }
         return ResponseEntity.ok(Mono.just(calculation));
     }
 
