@@ -48,8 +48,7 @@ components:
       flows:
         clientCredentials:
           tokenUrl: https://restrapid.auth0.com/oauth/token?audience=https://api.lightning-engineering.net/grocery-calculator-api
-          scopes: 
-            read: prices
+          scopes: {}
   schemas:
     LineItem:
       type: object
@@ -97,3 +96,5 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TaxItem'
+security:
+  - oAuth2ClientCredentials: []
