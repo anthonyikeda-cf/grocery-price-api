@@ -9,7 +9,7 @@ info:
     email: anthony.ikeda@thoughtworks.com
   version: '0.0.1'
 servers:
-  - url: http://localhost:8080/
+  - url: http://localhost:8034/
     description: "Local"
 paths:
   /calculation/v1:
@@ -41,6 +41,15 @@ paths:
         '404':
           description: NOT FOUND
 components:
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      description: Client credentials for oAuth2 
+      flows:
+        clientCredentials:
+          tokenUrl: https://restrapid.auth0.com/oauth/token?audience=https://api.lightning-engineering.net/grocery-calculator-api
+          scopes: 
+            read: prices
   schemas:
     LineItem:
       type: object
