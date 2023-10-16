@@ -7,9 +7,12 @@ ownerId: 'ari:cloud:teams::team/7306d8e5-bf71-4d02-b829-702b17eedd38'
 fields:
   tier: 4
 links:
-  - name: repository
+  - name: Source Code
     type: REPOSITORY
     url: 'https://github.com/anthonyikeda-cf/grocery-price-api'
+  - name: API documentation
+    type: DOCUMENT
+    url: 'https://github.com/future-assessments/grocery-price-api/blob/main/README.md'
 relationships: {}
 labels: null
 customFields: null
