@@ -8,13 +8,13 @@ fields:
   tier: 4
   lifecycle: Active
 links:
-  - name: Source Code
+  - name: 'Source Code'
     type: REPOSITORY
     url: 'https://github.com/anthonyikeda-cf/grocery-price-api'
-  - name: API documentation
+  - name: 'API documentation'
     type: DOCUMENT
     url: 'https://github.com/future-assessments/grocery-price-api/blob/main/README.md'
 relationships: {}
-labels: null
-customFields: null
+labels: []
+customFields: []
 
