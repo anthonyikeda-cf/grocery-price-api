@@ -1,0 +1,8 @@
+site_name: 'Product API'
+
+nav:
+  - Home: index.md
+  - "The application": APPLICATION.md
+
+plugins:
+  - techdocs-core
