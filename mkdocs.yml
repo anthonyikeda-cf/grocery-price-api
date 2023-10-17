@@ -2,7 +2,7 @@ site_name: 'Grocery Calculator API'
 
 nav:
   - Home: INDEX.md
-  - "The application": APPLICATION.md
+  - "The application": APP.md
 
 plugins:
   - techdocs-core
