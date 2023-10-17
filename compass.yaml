@@ -14,6 +14,9 @@ links:
   - name: 'API documentation'
     type: DOCUMENT
     url: 'https://github.com/future-assessments/grocery-price-api/blob/main/README.md'
+  - name: 'Architecture'
+    type: DOCUMENT
+    url: 'https://anthonyikeda.atlassian.net/wiki/spaces/SD/pages/524289/Grocery+Calculator+API'
   - name: 'OpenAPI'
     type: OTHER_LINK
     url: 'https://github.com/future-assessments/grocery-price-api/blob/main/calculator-swagger.yml'
