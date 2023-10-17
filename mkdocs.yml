@@ -1,4 +1,4 @@
-site_name: 'Product API'
+site_name: 'Grocery Calculator API'
 
 nav:
   - Home: index.md
