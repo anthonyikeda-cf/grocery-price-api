@@ -14,11 +14,8 @@ env:
   CONTAINER_NAME: 'grocery-price-api'
 
 jobs:
-  if_merged:
-    uses: ./.github/workflows/release.yml
   deploy:
     name: Deploy
-    needs: if_merged
     runs-on: ubuntu-latest
     
     environment: production
