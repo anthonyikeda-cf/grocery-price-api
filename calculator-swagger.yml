@@ -48,7 +48,9 @@ components:
       flows:
         clientCredentials:
           tokenUrl: https://restrapid.auth0.com/oauth/token?audience=https://api.lightning-engineering.net/grocery-calculator-api
-          scopes: {}
+          scopes:
+            read_prices: Read prices that have been calculated
+            create_calculation: Create a calculation on products that are nominated
   schemas:
     LineItem:
       type: object
