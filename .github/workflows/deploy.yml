@@ -1,8 +1,11 @@
 name: Deploy to AWS ECS
+
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Release to DockerHub"]
+    branches: [main]
+    types:
+      - completed
 env:
   AWS_REGION: 'us-east-1'
   ECS_SERVICE: 'product-domain'                 # set this to your Amazon ECS service name
