@@ -1,11 +1,10 @@
 name: Deploy to AWS ECS
 
 on:
-  workflow_run:
-    workflows: ["Release to DockerHub"]
-    branches: [main]
+  pull_request_target:
     types:
-      - completed
+      - closed
+
 env:
   AWS_REGION: 'us-east-1'
   ECS_SERVICE: 'product-domain'                 # set this to your Amazon ECS service name
@@ -15,9 +14,12 @@ env:
   CONTAINER_NAME: 'grocery-price-api'
 
 jobs:
+  if_merged:
+    uses: ./.github/workflows/release.yml
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    
     environment: production
 
     steps:
