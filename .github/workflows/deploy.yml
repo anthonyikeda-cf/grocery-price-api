@@ -18,6 +18,7 @@ jobs:
     uses: ./.github/workflows/release.yml
   deploy:
     name: Deploy
+    needs: if_merged
     runs-on: ubuntu-latest
     
     environment: production
