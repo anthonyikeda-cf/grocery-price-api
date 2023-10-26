@@ -20,6 +20,9 @@ links:
   - name: 'OpenAPI'
     type: OTHER_LINK
     url: 'https://github.com/future-assessments/grocery-price-api/blob/main/calculator-swagger.yml'
+  - name: 'Test Link'
+    type: OTHER_LINK
+    url: 'https://welcome.cloudyhead.org'
 relationships: {}
 labels: []
 customFields: []
