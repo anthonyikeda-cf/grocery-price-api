@@ -28,7 +28,7 @@ info:
       description: Main point of contact
     - type: group
       name: Store Utilities
-      provider: OKTA
+      provider: CORTEX
       description: Store Utilities team looking after tools that impact the checkout process
   x-cortex-groups:
     - business-logic
