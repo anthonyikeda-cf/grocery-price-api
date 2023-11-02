@@ -30,6 +30,9 @@ info:
       name: Store Utilities
       provider: OKTA
       description: Store Utilities team looking after tools that impact the checkout process
+  x-cortex-groups:
+    - business-logic
+    - calculator
   x-cortex-git:
     github:
       repository: future-assessments/grocery-price-api
