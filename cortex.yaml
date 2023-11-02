@@ -18,6 +18,10 @@ info:
       type: documentation
       url: https://anthonyikeda.atlassian.net/wiki/spaces/SD/pages/2031617/Adding+new+calculations
       description: New Features for the service
+    - name: Service Runbook
+      type: runbook
+      url: https://anthonyikeda.atlassian.net/wiki/spaces/SD/pages/2293762/Runbook
+      description: How to run the service
   x-cortex-owners:
     - type: group
       name: Store Utilities
