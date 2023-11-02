@@ -22,6 +22,10 @@ info:
       type: runbook
       url: https://anthonyikeda.atlassian.net/wiki/spaces/SD/pages/2293762/Runbook
       description: How to run the service
+    - type: dashboard
+      name: Atlass Dashboard
+      url: https://team.atlassian.com/project/ANTHO7-1/updates
+      description: The Atlass goals dashboard
   x-cortex-owners:
     - type: email
       email: anthony.ikeda@thoughtworks.com
