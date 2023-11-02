@@ -23,6 +23,9 @@ info:
       url: https://anthonyikeda.atlassian.net/wiki/spaces/SD/pages/2293762/Runbook
       description: How to run the service
   x-cortex-owners:
+    - type: email
+      email: anthony.ikeda@thoughtworks.com
+      description: Main point of contact
     - type: group
       name: Store Utilities
       provider: OKTA
