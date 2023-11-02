@@ -10,6 +10,14 @@ info:
     - name: Grocery Price API Spec
       type: OPENAPI
       url: ./calculator-swagger.yml
+    - name: Architecture
+      type: documentation
+      url: https://anthonyikeda.atlassian.net/wiki/spaces/SD/pages/524289/Grocery+Calculator+API
+      description: Architecture documentation.
+    - name: Feature Requests
+      type: documentation
+      url: https://anthonyikeda.atlassian.net/wiki/spaces/SD/pages/2031617/Adding+new+calculations
+      description: New Features for the service
   x-cortex-owners:
     - type: group
       name: Store Utilities
@@ -18,3 +26,8 @@ info:
   x-cortex-git:
     github:
       repository: future-assessments/grocery-price-api
+  x-cortex-issues:
+    jira:
+      projects:
+        - api-wizards
+
