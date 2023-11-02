@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: Grocery Price API
+  description: |
+    This API converts a function into a resource by applying models to the
+     resource to enable a functional API in a RESTful way.
+  x-cortex-tag: grocery-price-api
+  x-cortex-type: service
+  x-cortex-link:
+    - name: Grocery Price API Spec
+      type: OPENAPI
+      url: ./calculator-swagger.yml
+  x-cortex-owners:
+    - type: group
+      name: Store Utilities
+      provider: OKTA
+      description: Store Utilities team looking after tools that impact the checkout process
+  x-cortex-git:
+    github:
+      repository: future-assessments/grocery-price-api
