@@ -27,7 +27,7 @@ info:
       email: anthony.ikeda@thoughtworks.com
       description: Main point of contact
     - type: group
-      name: Store Utilities
+      name: store-utilities
       provider: CORTEX
       description: Store Utilities team looking after tools that impact the checkout process
   x-cortex-groups:
