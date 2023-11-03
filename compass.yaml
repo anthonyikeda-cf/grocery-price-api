@@ -24,6 +24,6 @@ links:
     type: OTHER_LINK
     url: 'https://welcome.cloudyhead.org'
 relationships: {}
-labels: []
+labels: ['groceries', 'shopping', 'ecommerce']
 customFields: []
 
