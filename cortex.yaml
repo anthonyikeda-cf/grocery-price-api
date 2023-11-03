@@ -37,6 +37,9 @@ info:
   x-cortex-groups:
     - business-logic
     - calculator
+    - groceries
+    - ecommerce
+    - shopping
   x-cortex-git:
     github:
       repository: future-assessments/grocery-price-api
